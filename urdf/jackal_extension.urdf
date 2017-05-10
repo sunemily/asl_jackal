@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!-- Set environment variable JACKAL_URDF_EXTRAS to the absolute 
+     location of this file to add to the robot. -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Replace with absolute filename on your machine -->
+  <xacro:include filename="$(find asl_jackal)/urdf/hokuyo_utm_lx30.urdf.xacro" />
+  
+  <!-- Replace with absolute filepath on your machine -->
+  <xacro:hokuyo_utm_lx30 
+    name="front_laser"
+    topic="front/scan"
+    filepath="package://asl_jackal/meshes/UTM-30LX.STL" 
+    parent="front_mount"
+    offset="0 0 0.01"
+    rpy="0 0 0"
+  />
+
+</robot>
