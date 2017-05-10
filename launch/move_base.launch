@@ -1,0 +1,6 @@
+<launch>
+
+  <!--Launch odometry/navstack move_base. -->
+  <include file="$(find jackal_navigation)/launch/odom_navigation_demo.launch" />
+
+</launch>
