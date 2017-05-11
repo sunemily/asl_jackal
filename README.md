@@ -6,17 +6,20 @@ Stuff to get up and running with the Jackal quickly.
 (For your computer)
 
 1. Clone this repository into the `src` directory of a catkin workspace
-2. `catkin_make` to compile the package
+2. `catkin_make` to compile the package*
 3. Add `source <workspace_name>/devel/setup.bash` to your `~/.bashrc`
-4. Add `export $JACKAL_URDF_EXTRAS=<workspace_location>/src/asl_jackal/urdf/jackal_extension.urdf` to your `~/.bashrc`
+4. Add `export JACKAL_URDF_EXTRAS=<workspace_location>/src/asl_jackal/urdf/jackal_extension.urdf` to your `~/.bashrc`
 
 (For the Jackal)
 
 1. Clone this repository into `~/catkin_ws/src/`
-2. `catkin_make` to compile the package
-3. Add `export $JACKAL_URDF_EXTRAS=/home/administrator/catkin_ws/src/asl_jackal/urdf/jackal_extension.urdf` to your `~/.bashrc`
-4. `sudo cp catkin_ws/src/asl_jackal/launch/move_base.launch /etc/ros/indigo/ros.d/`
-5. Reboot
+2. `catkin_make` to compile the package*
+3. Add `export JACKAL_URDF_EXTRAS=/home/administrator/catkin_ws/src/asl_jackal/urdf/jackal_extension.urdf` to `/etc/ros/setup.bash`
+4. Add `source /home/administrator/catkin_ws/devel/setup.bash` to `/etc/ros/setup.bash`
+5. `sudo cp catkin_ws/src/asl_jackal/launch/move_base.launch /etc/ros/indigo/ros.d/`
+6. Reboot
+
+*(If the package doesn't build, it may help to delete existing `devel` and `build` folders in the workspace)
 
 ## Simulation
 
