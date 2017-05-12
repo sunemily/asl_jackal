@@ -34,3 +34,18 @@ Stuff to get up and running with the Jackal quickly.
 4. On your computer, run `roslaunch jackal_viz view_robot.launch config:=navigation`
 
 ## Record and Playback
+
+1. On your computer, examine the full list of topics that are currently being published. `rostopic list -v`
+2. To begin recording, open a new terminal. The <-a> option tells rosbag record to subscribe to all published topics, and the <-O> option tells rosbag record to only subscribe to the specified topics. 
+`rosbag record -a`
+`rosbag record -O <topics>`
+3. Move the Jackal as desired using RViz.
+4. To stop recording, hit Ctrl+C in the rosbag terminal window. 
+5. To examine what was recorded in the bagfile, execute the following command from the directory in which the bagfile is stored. 
+`rosbag info <bagfile>`
+6. Power off the Jackal. 
+7. Launch Gazebo: `roslaunch jackal_viz view_robot.launch config:=navigation`
+7. To playback the bag file, `rosbag play <bagfile>`. The respective recording will now play back in simulation.
+
+
+
