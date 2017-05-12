@@ -33,7 +33,7 @@ Stuff to get up and running with the Jackal quickly.
 3. On your computer, `export ROS_IP=<your ip address>`
 4. On your computer, run `roslaunch jackal_viz view_robot.launch config:=navigation`
 
-## Record and Playback
+## Record 
 
 1. On your computer, examine the full list of topics that are currently being published. `rostopic list -v`
 2. To begin recording, open a new terminal. The <-O> option tells rosbag record to only subscribe to the specified topics. 
@@ -43,15 +43,18 @@ Stuff to get up and running with the Jackal quickly.
 5. To examine what was recorded in the bagfile, execute the following command from the directory in which the bagfile is stored. 
 `rosbag info <bagfile>`
 
-To playback in real life: 
-6. `rosbag play <bagfile>`. The recording will playback in real life.
+## Playback
 
-To playback in simulation:
-6. Close RViz.
-7. On your computer, comment out`export ROS_MASTER_URI=http://128.84.189.147:11311` and `export ROS_IP=<your ip address>` in your ./bashrc.
-8. Launch Gazebo: `roslaunch jackal_viz view_robot.launch config:=navigation`
-9. Launch RViz: `roslaunch jackal_viz view_robot.launch config:=navigation`
-10. To playback the bag file, `rosbag play <bagfile>`. The respective recording will now play back in simulation.
+To playback in real life:  
+1. `rosbag play <bagfile>`. The recording will playback on the Jackal in real life.  
+
+To playback in simulation:  
+1. Close RViz.  
+2. On your computer, comment out`export ROS_MASTER_URI=http://128.84.189.147:11311` and `export ROS_IP=<your ip address>` in your ./bashrc.  
+3. Launch Gazebo: `roslaunch jackal_viz view_robot.launch config:=navigation`  
+4. Launch RViz: `roslaunch jackal_viz view_robot.launch config:=navigation`  
+5. To playback the bag file, `rosbag play <bagfile>`. The respective recording will now play back in simulation.  
+
 
 For more information, see http://cornell-asl.org/index.php?title=Simulating_the_Jackal.
 
