@@ -51,7 +51,7 @@ To playback in real life:
 To playback in simulation:  
 1. Close RViz.  
 2. On your computer, comment out`export ROS_MASTER_URI=http://128.84.189.147:11311` and `export ROS_IP=<your ip address>` in your ./bashrc.  
-3. Launch Gazebo: `roslaunch jackal_viz view_robot.launch config:=navigation`  
+3. Launch Gazebo: `roslaunch asl_jackal nav_world.launch`  
 4. Launch RViz: `roslaunch jackal_viz view_robot.launch config:=navigation`  
 5. To playback the bag file, `rosbag play <bagfile>`. The respective recording will now play back in simulation.  
 
